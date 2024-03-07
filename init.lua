@@ -764,6 +764,16 @@ require('lazy').setup {
         },
       }
 
+      -- Auto close brackets & quotes
+      --
+      -- Example:
+      --  - ()
+      --  - {}
+      --  - []
+      --  - ""
+      --  - ''
+      require('mini.pairs').setup()
+
       -- Add/delete/replace surroundings (brackets, quotes, etc.)
       --
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
