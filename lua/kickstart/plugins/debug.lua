@@ -11,6 +11,9 @@ return {
   'mfussenegger/nvim-dap',
   -- NOTE: And you can specify dependencies as well
   dependencies = {
+    -- Dap ui dependencies
+    'nvim-neotest/nvim-nio',
+
     -- Creates a beautiful debugger UI
     'rcarriga/nvim-dap-ui',
 
@@ -28,6 +31,7 @@ return {
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
+      automatic_installation = true,
       automatic_setup = true,
 
       -- You can provide additional configuration to the handlers,
@@ -38,6 +42,7 @@ return {
       -- online, please don't ask me how to install them :)
       ensure_installed = {
         -- Update this to ensure that you have the debuggers for the langs you want
+        'codelldb',
         'delve',
       },
     }

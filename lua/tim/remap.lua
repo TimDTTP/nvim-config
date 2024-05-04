@@ -50,3 +50,8 @@ end)
 vim.keymap.set('n', '<C-l>', function()
   harpoon:list():select(4)
 end)
+
+-- Trouble
+vim.keymap.set('n', '<leader>xx', function()
+  require('trouble').toggle()
+end, { desc = 'Toggles Trouble' })

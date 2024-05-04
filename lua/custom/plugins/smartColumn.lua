@@ -3,8 +3,9 @@ return {
   opts = {
     disabled_filetypes = {
       'text',
-      'markdown',
       'netrw',
+      'help',
+      'starter',
     },
   },
 }

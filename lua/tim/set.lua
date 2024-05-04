@@ -32,3 +32,7 @@ vim.backspace = 'indent,eol,start'
 
 -- disable swapfile
 vim.opt.swapfile = false
+
+-- set fold gutter column
+vim.opt.foldcolumn = '2'
+vim.opt.foldenable = true
