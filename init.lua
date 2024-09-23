@@ -24,6 +24,7 @@ require("lazy").setup({
 	require("plugins.indentline"),
 	require("plugins.lsp"),
 	require("plugins.lualine"),
+	require("plugins.oil"),
 	require("plugins.smartcolumn"),
 	require("plugins.telescope"),
 	require("plugins.toggleterm"),

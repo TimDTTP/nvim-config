@@ -39,3 +39,6 @@ vim.api.nvim_create_user_command("Format", function(args)
 end, { range = true })
 
 vim.keymap.set("n", "<C-f>", "<cmd>Format<CR>", { desc = "Format code" })
+
+-- Oil.nvim
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
