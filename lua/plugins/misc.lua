@@ -41,4 +41,14 @@ return {
 			require("colorizer").setup()
 		end,
 	},
+	{
+		-- Harpoon2 integration into LuaLine statusline
+		"letieu/harpoon-lualine",
+		dependencies = {
+			{
+				"ThePrimeagen/harpoon",
+				branch = "harpoon2",
+			},
+		},
+	},
 }

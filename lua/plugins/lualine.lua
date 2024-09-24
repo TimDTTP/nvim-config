@@ -1,3 +1,8 @@
+local mode_width = 0
+local branch_width = 0
+local filetype_width = 0
+local filename_width = 0
+
 return {
 	"nvim-lualine/lualine.nvim",
 	config = function()
@@ -40,19 +45,73 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "nord", -- Set theme based on environment variable
+				theme = "auto", -- Set theme based on environment variable
 				-- Some useful glyphs:
 				-- https://www.nerdfonts.com/cheat-sheet
 				--        
-				section_separators = { left = "", right = "" },
-				component_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
+				component_separators = { left = " ", right = " " },
 				disabled_filetypes = { "alpha", "neo-tree" },
 				always_divide_middle = true,
 			},
 			sections = {
-				lualine_a = { mode },
-				lualine_b = { "branch" },
-				lualine_c = { filename },
+				lualine_a = {
+					{
+						"mode",
+						fmt = function(str)
+							if str == "" then
+								mode_width = 0
+								return ""
+							end
+							mode_width = #str + 2 -- 2 is the length of padding
+							return " " .. str
+						end,
+					},
+				},
+				lualine_b = {
+					{
+						"branch",
+						cond = function()
+							local should_show = vim.opt.columns:get() > 60
+							if not should_show then
+								branch_width = 0
+							end
+							return should_show
+						end,
+						fmt = function(str)
+							if str == "" then
+								branch_width = 0
+								return ""
+							end
+							branch_width = #str + 2 + 2 -- 4 is the length of icon (unicode), 2 is the length of padding
+							return str
+						end,
+					},
+				},
+				lualine_c = {
+					{
+						-- fill space to center the filetype + filename
+						function()
+							local used_space = mode_width * 2 + branch_width
+							local win_width = vim.opt.columns:get()
+							local fill_space = string.rep(" ", math.floor(win_width / 2) - used_space)
+							return fill_space
+						end,
+						padding = { left = 0, right = 0 },
+						cond = function()
+							return vim.opt.columns:get() > 60
+						end,
+					},
+					{
+						"harpoon2",
+						icon = "󰀱",
+						indicators = { "H", "J", "K", "L" },
+						active_indicators = { "[H]", "[J]", "[K]", "[L]" },
+						color_active = { fg = "1A181A", bg = "78DCE8" },
+						_separator = " ",
+						no_harpoon = "Harpoon not loaded",
+					},
+				},
 				lualine_x = {
 					diagnostics,
 					diff,
@@ -65,12 +124,24 @@ return {
 			inactive_sections = {
 				lualine_a = {},
 				lualine_b = {},
-				lualine_c = { { "filename", path = 1 } },
+				lualine_c = {},
 				lualine_x = { { "location", padding = 0 } },
 				lualine_y = {},
 				lualine_z = {},
 			},
-			tabline = {},
+			tabline = {
+				lualine_a = {
+					{
+						"datetime",
+						style = "default",
+					},
+				},
+				lualine_b = {},
+				lualine_c = {},
+				lualine_x = {},
+				lualine_y = {},
+				lualine_z = {},
+			},
 			extensions = { "fugitive" },
 		})
 	end,

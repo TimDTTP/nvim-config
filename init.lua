@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 -- setup plugins
 require("lazy").setup({
 	require("plugins.autocomplete"),
+	require("plugins.barbecue"),
 	require("plugins.coderunner"),
 	require("plugins.colortheme"),
 	require("plugins.conform"),
@@ -24,11 +25,15 @@ require("lazy").setup({
 	require("plugins.indentline"),
 	require("plugins.lsp"),
 	require("plugins.lualine"),
+	require("plugins.markview"),
+	require("plugins.noice"),
 	require("plugins.oil"),
+	require("plugins.outline"),
 	require("plugins.smartcolumn"),
 	require("plugins.telescope"),
 	require("plugins.toggleterm"),
 	require("plugins.treesitter"),
+	require("plugins.trouble"),
 	require("plugins.misc"),
 })
 

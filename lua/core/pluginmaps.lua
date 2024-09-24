@@ -1,6 +1,6 @@
 -- Code runner
 -- Runs code
-vim.keymap.set("n", "<C-n>", vim.cmd.RunCode, { desc = "Runs code runner" })
+vim.keymap.set("n", "<C-m>", vim.cmd.RunCode, { desc = "[M]ake file && runs code runner" })
 
 -- Opens lazygit
 local Terminal = require("toggleterm.terminal").Terminal
@@ -20,7 +20,7 @@ end
 
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>g",
+	"<leader>lg",
 	"<cmd>lua _lazygit_toggle()<CR>",
 	{ desc = "Opens lazygit", noremap = true, silent = true }
 )
@@ -44,6 +44,35 @@ vim.keymap.set("n", "<C-f>", "<cmd>Format<CR>", { desc = "Format code" })
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 vim.api.nvim_set_keymap("n", "<leader>oi", "<cmd>lua require('oil').open_float('.')<CR>", {
 	desc = "Opens floating Oil view",
+	noremap = true,
+	silent = true,
+})
+
+-- Harpoon
+local harpoon = require("harpoon")
+vim.keymap.set("n", "<leader>a", function()
+	harpoon:list():add()
+end, { desc = "Appends file to Harpoon" })
+vim.keymap.set("n", "<C-e>", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
+end, { desc = "Toggle Harpoon menu" })
+
+vim.keymap.set("n", "<C-h>", function()
+	harpoon:list():select(1)
+end)
+vim.keymap.set("n", "<C-j>", function()
+	harpoon:list():select(2)
+end)
+vim.keymap.set("n", "<C-k>", function()
+	harpoon:list():select(3)
+end)
+vim.keymap.set("n", "<C-l>", function()
+	harpoon:list():select(4)
+end)
+
+-- Markview
+vim.keymap.set("n", "<leader>mv", "<cmd>Markview toggle<CR>", {
+	desc = "Toggle MarkView",
 	noremap = true,
 	silent = true,
 })
