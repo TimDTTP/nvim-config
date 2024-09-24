@@ -30,6 +30,7 @@ require("lazy").setup({
 	require("plugins.oil"),
 	require("plugins.outline"),
 	require("plugins.smartcolumn"),
+	require("plugins.smoothcursor"),
 	require("plugins.telescope"),
 	require("plugins.toggleterm"),
 	require("plugins.treesitter"),

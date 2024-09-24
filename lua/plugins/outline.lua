@@ -8,6 +8,8 @@ return {
 			-- Your setup opts here (leave empty to use defaults)
 			outline_window = {
 				focus_on_open = false,
+				show_cursorline = true,
+				hide_cursor = true,
 			},
 			symbol_folding = {
 				autofold_depth = false,
