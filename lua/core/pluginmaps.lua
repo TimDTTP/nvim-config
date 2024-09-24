@@ -42,3 +42,8 @@ vim.keymap.set("n", "<C-f>", "<cmd>Format<CR>", { desc = "Format code" })
 
 -- Oil.nvim
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.api.nvim_set_keymap("n", "<leader>oi", "<cmd>lua require('oil').open_float('.')<CR>", {
+	desc = "Opens floating Oil view",
+	noremap = true,
+	silent = true,
+})

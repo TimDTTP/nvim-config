@@ -12,7 +12,12 @@ return {
 			end,
 		},
 		float = {
-			preview_split = "above",
+			max_width = 75,
+			max_height = 30,
+			preview_split = "below",
+			win_options = {
+				winblend = 15,
+			},
 		},
 	},
 	-- Optional dependencies
