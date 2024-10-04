@@ -73,7 +73,9 @@ return { -- Autocompletion
 					luasnip.lsp_expand(args.body)
 				end,
 			},
-			completion = { completeopt = "menu,menuone,noinsert" },
+			completion = {
+				completeopt = "menu,menuone,noinsert",
+			},
 
 			-- For an understanding of why these mappings were
 			-- chosen, you will need to read `:help ins-completion`
@@ -169,6 +171,9 @@ return { -- Autocompletion
 					})[entry.source.name]
 					return vim_item
 				end,
+			},
+			window = {
+				border = "rounded",
 			},
 		})
 	end,
