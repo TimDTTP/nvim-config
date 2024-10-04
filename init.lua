@@ -27,6 +27,7 @@ require("lazy").setup({
 	require("plugins.lualine"),
 	require("plugins.markview"),
 	require("plugins.misc"),
+	require("plugins.noice"),
 	require("plugins.oil"),
 	require("plugins.outline"),
 	require("plugins.smartcolumn"),
