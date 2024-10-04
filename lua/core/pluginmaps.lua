@@ -20,9 +20,16 @@ end
 
 vim.api.nvim_set_keymap(
 	"n",
-	"<leader>lg",
+	"<leader>tg",
 	"<cmd>lua _lazygit_toggle()<CR>",
 	{ desc = "Opens lazygit", noremap = true, silent = true }
+)
+
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>tt",
+	"<cmd>ToggleTerm<CR>",
+	{ desc = "Opens floating terminal", noremap = true, silent = true }
 )
 
 -- Formats code

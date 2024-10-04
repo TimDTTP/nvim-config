@@ -30,3 +30,4 @@ vim.opt.formatoptions:remove({ "c", "r", "o" }) -- Don't insert the current comm
 vim.o.background = "dark"
 vim.o.mousehide = true
 vim.o.foldcolumn = "2"
+vim.o.cmdheight = 0

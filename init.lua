@@ -17,7 +17,7 @@ require("lazy").setup({
 	require("plugins.autocomplete"),
 	require("plugins.barbecue"),
 	require("plugins.coderunner"),
-	require("plugins.colortheme"),
+	require("plugins.colorscheme"),
 	require("plugins.conform"),
 	require("plugins.flash"),
 	require("plugins.gitsigns"),
@@ -26,7 +26,7 @@ require("lazy").setup({
 	require("plugins.lsp"),
 	require("plugins.lualine"),
 	require("plugins.markview"),
-	require("plugins.noice"),
+	require("plugins.misc"),
 	require("plugins.oil"),
 	require("plugins.outline"),
 	require("plugins.smartcolumn"),
@@ -35,7 +35,6 @@ require("lazy").setup({
 	require("plugins.toggleterm"),
 	require("plugins.treesitter"),
 	require("plugins.trouble"),
-	require("plugins.misc"),
 })
 
-require("core.pluginmaps")
+require("core.pluginmaps") -- personal keymaps revolving around plugins
