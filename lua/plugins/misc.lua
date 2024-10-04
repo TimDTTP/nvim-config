@@ -42,6 +42,10 @@ return {
 		end,
 	},
 	{
+		-- UI purposes
+		"MunifTanjim/nui.nvim",
+	},
+	{
 		-- Harpoon2 integration into LuaLine statusline
 		"letieu/harpoon-lualine",
 		dependencies = {
