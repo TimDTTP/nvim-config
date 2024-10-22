@@ -14,14 +14,14 @@ local lazygit = Terminal:new({
 	},
 })
 
-function _lazygit_toggle()
+function _Lazygit_toggle()
 	lazygit:toggle()
 end
 
 vim.api.nvim_set_keymap(
 	"n",
 	"<leader>tg",
-	"<cmd>lua _lazygit_toggle()<CR>",
+	"<cmd>lua _Lazygit_toggle()<CR>",
 	{ desc = "Opens lazygit", noremap = true, silent = true }
 )
 
