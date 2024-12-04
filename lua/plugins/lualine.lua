@@ -1,7 +1,5 @@
 local mode_width = 0
 local branch_width = 0
-local filetype_width = 0
-local filename_width = 0
 
 return {
 	"nvim-lualine/lualine.nvim",
